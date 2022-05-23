@@ -1,29 +1,17 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Submit a File{% endblock %}</h1>
-{% endblock %}
-
-{% block content %}
-  <li>
-    <ul>
-      Submit a message
-      View messages
-    </ul>
-  </li>
-{% endblock %}
-{% block header %}
-  <h1>Submit</h1>
+  <h1>{% block title %}Submit a Message{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
     <label for="message">Your message:</label>
     <input name="message" id="message">
-    <br>
+    <br><br>
     <label for="name">Your name or handle:</label>
     <input name="name" id="name">
-    <br>
+    <br><br>
     <input type="submit" value="Submit Message">
   </form>
 

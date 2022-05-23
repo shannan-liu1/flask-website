@@ -17,3 +17,7 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('main.html')
+
+@app.route('/submit')
+def submit():
+    return render_template('submit.html')
