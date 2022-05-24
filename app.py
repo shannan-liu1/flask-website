@@ -20,16 +20,18 @@ import base64
 
 import sqlite3 # interface with the db
 
-
-### stuff from last class
 app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('main.html')
 
-@app.route('/submit')
+@app.route('/submit', methods=['POST', 'GET'])
 def submit():
-    return render_template('submit.html')
+    if request.method == 'GET':
+        return render_template('submit.html')
+    else:
+
+        return render_template('submit.html')
 
 def get_message_db():
     """
@@ -54,11 +56,17 @@ def get_message_db():
         return g.message_db
 
 
-def insert_message(request):
-    cmd = """\
-    
+def insert_message():
+    handle = request.form['handle']
+    message = request.form['message']
+    db = get_message_db()
+
+    cmd = f"""\
+    INSERT INTO message_db (handle, message)
+    VALUES ({handle},{message})
     """
     <input type="text" name="message" id="message">
+
 
 def close_message_db(e = None):
     db = g.pop('message_db',None)
