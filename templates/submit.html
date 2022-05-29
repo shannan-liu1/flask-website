@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Submit{% endblock %}</h1>
+  <h2>{% block title %}Submit a Message{% endblock %}</h2>
 {% endblock %}
 
 {% block content %}
@@ -17,11 +17,11 @@
 
   {% if submitted %}
     <br>
-    <p>Thanks for submitting a file! Here is what you submitted</p>
-    <br>
-    <p>Message: {{message}}</p>
-    <br>
-    <p>Handle: {{handle}}</p>
+    <p>Thanks for submitting a file! Here is what you submitted:</p>
+    <ul>
+      <li>Message: {{message}}</li>
+      <li>Handle: {{handle}}</li>
+    </ul>
   {% endif %}
 
   {% if error %}

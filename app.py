@@ -100,7 +100,7 @@ def random_messages(n):
 
     # randomly select n handles and messages to display
     cmd = f"""
-    SELECT * FROM table ORDER BY RANDOM() LIMIT {n}
+    SELECT * FROM messages ORDER BY RANDOM() LIMIT {n}
     """
 
     # execute the db command 
@@ -112,6 +112,7 @@ def random_messages(n):
     # handles and messages in our database
     message_info = cursor.fetchall()
     db.close() #  close connection
+    
     return message_info
 
 @app.route('/view/')

@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Some Messages{% endblock %}</h1>
+  <h2>{% block title %}View Messages{% endblock %}</h2>
 {% endblock %}
 
 {% block content %}
+    
+    <p><b>Here is a list of some of the messages we've received!</b></p>
     {% for m in messages %}
         <br>
-        {{m[1]}}
+        {{m[2]}}
         <br>
-        <i>- {{m[2]}}</i>
+        <i>- {{m[1]}}</i>
+        <br>
     {% endfor %}
 {% endblock %}
