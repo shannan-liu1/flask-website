@@ -7,27 +7,25 @@
 {% block content %}
   <form method="post">
     <label for="message">Your message:</label>
-    <input name="message" id="message">
+    <input type="text" name="message" id="message">
     <br><br>
     <label for="handle">Your name or handle:</label>
-    <input name="handle" id="handle">
+    <input type="text" name="handle" id="handle">
     <br><br>
     <input type="submit" value="Submit Message">
   </form>
 
-  {% if thanks %}
-    Thanks for submitting a file!
-  {% endif %}
-
-  {% if digit %}
+  {% if submitted %}
     <br>
-    Thanks for the image!  It looks like a {{digit}}.
+    <p>Thanks for submitting a file! Here is what you submitted</p>
     <br>
-    <img src="{{ image }}", alt="an 8x8 visualization of the supplied digit."/>
+    <p>Message: {{message}}</p>
+    <br>
+    <p>Handle: {{handle}}</p>
   {% endif %}
 
   {% if error %}
     <br>
-    Oh no, we couldn't use that file!  Please upload an 8x8 numpy array as a text file.
+    <p>Oh no, there was an error with your submission! Please try again!</p>
   {% endif %}
 {% endblock %}

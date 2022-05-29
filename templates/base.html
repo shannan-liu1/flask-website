@@ -3,10 +3,11 @@
 <title>{% block title %}{% endblock %} - PIC16B Website</title>
 <nav>
   <h1>A Simple Message Bank</h1>
-  <!-- <b>Navigation:</b> -->
+  <!-- <b>Navigation Bar</b> -->
   <ul>
     <li><a href="{{ url_for('main') }}">Main page</a></li>
     <li><a href="{{ url_for('submit') }}">Submit a Message</a></li>
+    <li><a href="{{ url_for('view') }}">View a Message</a></li>
   </ul>
 </nav>
 <section class="content">
