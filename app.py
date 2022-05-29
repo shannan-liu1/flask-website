@@ -1,22 +1,6 @@
 from flask import Flask, g, render_template, request
 import sqlite3 # for interfacing with our db
 
-import click
-
-import random
-import string
-
-import sklearn as sk
-import matplotlib.pyplot as plt
-import numpy as np
-import pickle
-
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-
-import io
-import base64
-
 app = Flask(__name__)
 @app.route('/')
 def main():
